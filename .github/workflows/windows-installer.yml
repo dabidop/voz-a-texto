@@ -26,7 +26,7 @@ jobs:
         run: npx electron-builder --win --publish never
 
       - name: Publicar instalador como artefacto
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Voz-a-texto-Windows
           path: release/Voz-a-texto-Setup.exe
