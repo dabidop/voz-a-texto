@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voz a texto</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><span>Voz a texto</span></div>
+      <span class="privacy"><span class="dot"></span> Sin almacenamiento</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">TRANSCRIPCIÓN SIMPLE</div>
+      <h1>Convierte tu audio<br /><em>en palabras.</em></h1>
+      <p>Sube una grabación y recibe el texto en unos instantes.<br />También funciona con audios largos de 20 minutos o más.</p>
+    </section>
+
+    <section class="card">
+      <div class="step"><span>1</span><div><strong>Elige tu audio</strong><small>MP3, M4A, WAV, MP4, OGG o FLAC</small></div></div>
+      <button class="dropzone" id="dropzone" type="button">
+        <span class="upload-icon">↑</span><span class="drop-title" id="dropTitle">Selecciona un archivo de audio</span><span class="drop-hint">Haz clic para buscarlo en tu equipo</span>
+      </button>
+      <div class="file-preview hidden" id="filePreview"><span class="audio-icon">♫</span><div><strong id="fileName"></strong><small id="fileSize"></small></div><button id="removeFile" type="button" aria-label="Quitar archivo">×</button></div>
+
+      <div class="options-row">
+        <label><span>Idioma del audio</span><select id="language"><option value="es" selected>Español</option><option value="auto">Detectar automáticamente</option><option value="en">Inglés</option><option value="pt">Portugués</option><option value="fr">Francés</option></select></label>
+      </div>
+      <button class="primary" id="transcribe" type="button" disabled><span>Transcribir audio</span><b>→</b></button>
+      <div class="progress hidden" id="progress"><div class="spinner"></div><span id="progressText">Preparando…</span></div>
+      <div class="error hidden" id="error"></div>
+    </section>
+
+    <section class="result hidden" id="result"><div class="result-head"><div><div class="eyebrow">RESULTADO</div><h2>Tu transcripción</h2></div><button id="copy" type="button">Copiar texto</button></div><textarea id="output" readonly placeholder="Aquí aparecerá el texto…"></textarea><div class="result-foot"><span id="wordCount">0 palabras</span><button id="newAudio" type="button">Transcribir otro audio</button></div></section>
+    <footer>Tu audio se procesa localmente y no se sube a ningún servicio.</footer>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>

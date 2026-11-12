@@ -1,0 +1,46 @@
+{
+  "name": "voz-a-texto",
+  "version": "1.0.0",
+  "description": "Transcriptor de audio sencillo para escritorio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.2",
+    "ffmpeg-static": "^5.2.0"
+  },
+  "allowScripts": {
+    "electron@36.9.5": true,
+    "ffmpeg-static@5.3.0": true,
+    "onnxruntime-node@1.21.0": true,
+    "protobufjs@7.6.6": true,
+    "sharp@0.34.5": true,
+    "electron-winstaller@5.4.0": true
+  },
+  "devDependencies": {
+    "electron": "^36.9.5",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.vozatexto.app",
+    "productName": "Voz a texto",
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "styles.css",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": ["portable"],
+      "artifactName": "Voz-a-texto.exe"
+    }
+  }
+}
