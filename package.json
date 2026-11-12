@@ -39,8 +39,15 @@
       "output": "release"
     },
     "win": {
-      "target": ["portable"],
-      "artifactName": "Voz-a-texto.exe"
+      "target": ["nsis"],
+      "artifactName": "Voz-a-texto-Setup.exe"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Voz a texto"
     }
   }
 }
