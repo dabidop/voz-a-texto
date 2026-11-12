@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Crear instalador
-        run: npm run dist
+        run: npx electron-builder --win --publish never
 
       - name: Publicar instalador como artefacto
         uses: actions/upload-artifact@v4
